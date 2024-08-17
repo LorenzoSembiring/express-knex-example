@@ -7,6 +7,7 @@ const router = express.Router()
 const authController = new AuthController();
 
 router.post('/register', upload.none(), authController.register)
-router.post('/verify', upload.none(), authController.verify)
+router.post('/verify', authController.verify)
+router.post('/login', upload.none(), authController.login)
 
 module.exports = router;
